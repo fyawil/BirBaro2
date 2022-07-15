@@ -14,8 +14,109 @@ class App extends React.Component {
       sunslot: "",
       workout: ""
     }
+
+   this.handleChangeStrength = this.handleChangeStrength.bind(this)
+   this.handleChangeWeight = this.handleChangeWeight.bind(this)
+   this.handleChangeMon = this.handleChangeMon.bind(this)
+   this.handleChangeTue = this.handleChangeTue.bind(this)
+   this.handleChangeWed = this.handleChangeWed.bind(this)
+   this.handleChangeThu = this.handleChangeThu.bind(this)
+   this.handleChangeFri = this.handleChangeFri.bind(this)
+   this.handleChangeSat = this.handleChangeSat.bind(this)
+   this.handleChangeSun = this.handleChangeSun.bind(this)
+   this.handleChangeTime = this.handleChangeTime.bind(this)
    this.generate = this.generate.bind(this)
   } 
+
+  handleChangeStrength(event){
+    this.setState({
+      isStrength: event.target.value
+    })
+  }
+
+  handleChangeWeight(event){
+    this.setState({
+      isWeights: event.target.value
+    })
+  }
+
+  handleChangeMon(event){
+    this.setState({
+      monslot: event.target.value
+    })
+    if(document.getElementById("mon").checked == false){
+    this.setState({
+      monslot: ""
+    })
+    }
+  }
+  handleChangeTue(event){
+    this.setState({
+      tueslot: event.target.value
+    })
+    if(document.getElementById("tue").checked == false){
+      this.setState({
+        tueslot: ""
+      })
+      }
+  }
+  handleChangeWed(event){
+    this.setState({
+      wedslot: event.target.value
+    })
+    if(document.getElementById("wed").checked == false){
+      this.setState({
+        wedslot: ""
+      })
+      }
+  }
+  handleChangeThu(event){
+    this.setState({
+      thuslot: event.target.value
+    })
+    if(document.getElementById("thu").checked == false){
+      this.setState({
+        thuslot: ""
+      })
+      }
+  }
+  handleChangeFri(event){
+    this.setState({
+      frislot: event.target.value
+    })
+    if(document.getElementById("fri").checked == false){
+      this.setState({
+        frislot: ""
+      })
+      }
+  }
+  handleChangeSat(event){
+    this.setState({
+      satslot: event.target.value
+    })
+    if(document.getElementById("sat").checked == false){
+      this.setState({
+        satslot: ""
+      })
+      }
+  }
+  handleChangeSun(event){
+    this.setState({
+      sunslot: event.target.value
+    })
+    if(document.getElementById("sun").checked == false){
+      this.setState({
+        sunslot: ""
+      })
+      }
+  }
+
+  handleChangeTime(event){
+    this.setState({
+      availableTime: event.target.value
+    })
+  }
+
 
   generate(){  
 
@@ -109,130 +210,15 @@ class App extends React.Component {
                 }
       }
   }
-
-    if(document.getElementById("strength").checked){
-      this.setState({
-        isStrength: "Strength"
-      })
-    }
-    if(document.getElementById("cardio").checked){
-      this.setState({
-        isStrength: "Cardio"
-      })
-    }
-
-    if(document.getElementById("weighted").checked){
-      this.setState({
-        isWeights: "Weighted"
-      })
-    }
-    if(document.getElementById("unweighted").checked){
-      this.setState({
-        isWeights: "UnWeighted"
-      })
-    }
-
-    if(document.getElementById("mon").checked){
-      this.setState({
-        monslot: ["Monday"]
-      })
-    }
-    else {
-      this.setState({
-        monslot: ""
-      })
-    }
-    if(document.getElementById("tue").checked){
-      this.setState({
-        tueslot: ["Tuesday"]
-      })
-    }
-    else {
-      this.setState({
-        tueslot: ""
-      })
-    }
-    if(document.getElementById("wed").checked){
-      this.setState({
-        wedslot: ["Wednesday"]
-      })
-    }
-    else {
-      this.setState({
-        wedslot: ""
-      })
-    }
-    if(document.getElementById("thu").checked){
-      this.setState({
-        thuslot: ["Thursday"]
-      })
-    }
-    else {
-      this.setState({
-        thuslot: ""
-      })
-    }
-    if(document.getElementById("fri").checked){
-      this.setState({
-        frislot: ["Friday"]
-      })
-    }
-    else {
-      this.setState({
-        frislot: ""
-      })
-    }
-    if(document.getElementById("sat").checked){
-      this.setState({
-        satslot: ["Saturday"]
-      })
-    }
-    else {
-      this.setState({
-        satslot: ""
-      })
-    }
-    if(document.getElementById("sun").checked){
-      this.setState({
-        sunslot: ["Sunday"]
-      })
-    } 
-    else {
-      this.setState({
-        sunslot: ""
-      })
-    }
- 
-    if(document.getElementById("30mins").checked){
-      this.setState({
-        availableTime: 30
-      })
-    } 
-    if(document.getElementById("45mins").checked){
-      this.setState({
-        availableTime: 45
-      })
-    } 
-    if(document.getElementById("60mins").checked){
-      this.setState({
-        availableTime: 60
-      })
-    } 
-    if(document.getElementById("75mins").checked){
-      this.setState({
-        availableTime: 75
-      })
-    } 
-
     
     let numberOfUnfilledDays = 
-    this.state.monslot.length+
-    this.state.tueslot.length+
-    this.state.wedslot.length+
-    this.state.thuslot.length+
-    this.state.frislot.length+
-    this.state.satslot.length+
-    this.state.sunslot.length
+    document.getElementById("mon").checked+
+    document.getElementById("tue").checked+
+    document.getElementById("wed").checked+
+    document.getElementById("thu").checked+
+    document.getElementById("fri").checked+
+    document.getElementById("sat").checked+
+    document.getElementById("sun").checked
 
     let template = []
 
@@ -241,16 +227,16 @@ class App extends React.Component {
       for(let i = 0;i<numberOfUnfilledDays;i++){
 
         switch(this.state.availableTime){
-          case 30:
+          case "is30mins":
           template.push([0,1]);
           break;
-          case 45:
+          case "is45mins":
           template.push([0,1,2]);
           break;
-          case 60:
+          case "is60mins":
           template.push([0,1,2,3]);
           break;
-          case 75:
+          case "is75mins":
           template.push([0,1,2,3,4]);
           break;
         }
@@ -259,6 +245,7 @@ class App extends React.Component {
 
     this.setState({
       workout : template
+
     })
   } 
 
@@ -269,30 +256,45 @@ class App extends React.Component {
         return (
           <div>
           <div>
-<input type="radio" id="strength" value="isstrength" name="strengthorcardio"></input>Strength
-<input type="radio" id="cardio" value="iscardio" name="strengthorcardio"></input>Cardio
+<input type="radio" id="strength" value="Strength" name="strengthorcardio"
+onChange={this.handleChangeStrength}></input>Strength
+<input type="radio" id="cardio" value="Cardio" name="strengthorcardio"
+onChange={this.handleChangeStrength}></input>Cardio
           </div>
             <br></br>
             <div>
-<input type="radio" id="weighted" value="isweighted" name="weight"></input>Weighted
-<input type="radio" id="unweighted" value="isunweighted" name="weight"></input>Not Weighted
+<input type="radio" id="weighted" value="Weighted" name="weight"
+onChange={this.handleChangeWeight}></input>Weighted
+<input type="radio" id="unweighted" value="UnWeighted" name="weight"
+onChange={this.handleChangeWeight}></input>Not Weighted
           </div>
             <br></br>
             <div>
-<input type="checkbox" id="mon" value="ismon" name="days"></input>Monday
-<input type="checkbox" id="tue" value="istue" name="days"></input>Tueday
-<input type="checkbox" id="wed" value="iswed" name="days"></input>Wednesday
-<input type="checkbox" id="thu" value="isthu" name="days"></input>Thursday
-<input type="checkbox" id="fri" value="isfri" name="days"></input>Friday
-<input type="checkbox" id="sat" value="issat" name="days"></input>Saturday
-<input type="checkbox" id="sun" value="issun" name="days"></input>Sunday
+<input type="checkbox" id="mon" value={["Monday"]} name="days"
+onChange={this.handleChangeMon}></input>Monday
+<input type="checkbox" id="tue" value={["Tuesday"]} name="days"
+onChange={this.handleChangeTue}></input>Tuesday
+<input type="checkbox" id="wed" value={["Wednesday"]} name="days"
+onChange={this.handleChangeWed}></input>Wednesday
+<input type="checkbox" id="thu" value={["Thursday"]} name="days"
+onChange={this.handleChangeThu}></input>Thursday
+<input type="checkbox" id="fri" value={["Friday"]} name="days"
+onChange={this.handleChangeFri}></input>Friday
+<input type="checkbox" id="sat" value={["Saturday"]} name="days"
+onChange={this.handleChangeSat}></input>Saturday
+<input type="checkbox" id="sun" value={["Sunday"]} name="days"
+onChange={this.handleChangeSun}></input>Sunday
           </div>
             <br></br>
             <div>
-<input type="radio" id="30mins" value="is30mins" name="time"></input>30 mins
-<input type="radio" id="45mins" value="is45mins" name="time"></input>45 mins
-<input type="radio" id="60mins" value="is60mins" name="time"></input>60 mins
-<input type="radio" id="75mins" value="is75mins" name="time"></input>75 mins
+<input type="radio" id="30mins" value="is30mins" name="time"
+onChange={this.handleChangeTime}></input>30 mins
+<input type="radio" id="45mins" value="is45mins" name="time"
+onChange={this.handleChangeTime}></input>45 mins
+<input type="radio" id="60mins" value="is60mins" name="time"
+onChange={this.handleChangeTime}></input>60 mins
+<input type="radio" id="75mins" value="is75mins" name="time"
+onChange={this.handleChangeTime}></input>75 mins
           </div>
             <br></br>
 <button onClick={this.generate}>Generate!</button>   
