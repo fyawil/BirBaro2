@@ -1,5 +1,5 @@
 # BirBaro2
 
-Workout App made with React Javascript.
+This is BirBaro version 2. 
 
-It generates weekly workout schedule based on the user goals and availability.
+It generates a weekly workout schedule with illustrations based on the user goals and availability.
