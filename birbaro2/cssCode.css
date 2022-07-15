@@ -1,0 +1,118 @@
+#schedulecontainer {
+    display: grid;
+    grid-template-areas: 
+"monslot1 	tueslot1 	wedslot1 	thuslot1 	frislot1 	satslot1 	sunslot1"
+"monslot2 	tueslot2 	wedslot2 	thuslot2 	frislot2 	satslot2 	sunslot2"
+"monslot3 	tueslot3 	wedslot3 	thuslot3 	frislot3 	satslot3 	sunslot3"
+"monslot4 	tueslot4 	wedslot4 	thuslot4 	frislot4 	satslot4 	sunslot4"
+"monslot5 	tueslot5 	wedslot5 	thuslot5 	frislot5 	satslot5 	sunslot5"
+    ;
+}
+
+    #monslot1 {
+    grid-area: monslot1;
+    }
+    #monslot2 {
+    grid-area: monslot2;
+    }
+    #monslot3 {
+    grid-area: monslot3;
+    }
+    #monslot4 {
+    grid-area: monslot4;
+    }
+    #monslot5 {
+    grid-area: monslot5;
+    }
+    #tueslot1 {
+    grid-area: tueslot1;
+    }
+    #tueslot2 {
+     grid-area: tueslot2;
+    }
+    #tueslot3 {
+     grid-area: tueslot3;
+    }
+    #tueslot4 {
+     grid-area: tueslot4;
+    }
+    #tueslot5 {
+     grid-area: tueslot5;
+    }
+    #wedslot1 {
+     grid-area: wedslot1;
+    }
+    #wedslot2 {
+     grid-area: wedslot2;
+    }
+    #wedslot3 {
+     grid-area: wedslot3;
+    }
+    #wedslot4 {
+     grid-area: wedslot4;
+    }
+    #wedslot5 {
+     grid-area: wedslot5;
+    }
+    #thuslot1 {
+     grid-area: thuslot1;
+    }
+    #thuslot2 {
+     grid-area: thuslot2;
+    }
+    #thuslot3 {
+     grid-area: thuslot3;
+    }
+    #thuslot4 {
+     grid-area: thuslot4;
+    }
+    #thuslot5 {
+     grid-area: thuslot5;
+    }
+    #frislot1 {
+     grid-area: frislot1;
+    }
+    #frislot2 {
+     grid-area: frislot2;
+    }
+    #frislot3 {
+     grid-area: frislot3;
+    }
+    #frislot4 {
+     grid-area: frislot4;
+    }
+    #frislot5 {
+     grid-area: frislot5;
+    }
+    #satslot1 {
+     grid-area: satslot1;
+    }
+    #satslot2 {
+     grid-area: satslot2;
+    }
+    #satslot3 {
+     grid-area: satslot3;
+    }
+    #satslot4 {
+     grid-area: satslot4;
+    }
+    #satslot5 {
+     grid-area: satslot5;
+    }
+    #sunslot1 {
+     grid-area: sunslot1;
+    }
+    #sunslot2 {
+     grid-area: sunslot2;
+    }
+    #sunslot3 {
+     grid-area: sunslot3;
+    }
+    #sunslot4 {
+     grid-area: sunslot4;
+    }
+    #sunslot5 {
+     grid-area: sunslot5;
+    }
+    
+
